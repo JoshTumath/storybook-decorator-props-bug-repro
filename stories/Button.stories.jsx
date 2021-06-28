@@ -10,7 +10,16 @@ export default {
   },
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args, { foobar }) => {
+  return (
+    <div>
+      <Button {...args} />
+      <p>
+        This value should say 'foo': <code>{foobar}</code>
+      </p>
+    </div>
+  );
+};
 
 export const Primary = Template.bind({});
 Primary.args = {
